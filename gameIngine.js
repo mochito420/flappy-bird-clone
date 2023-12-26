@@ -71,14 +71,19 @@ export const starGame = () => {
             })
             
             const collitionsBird = () => {
-                if (bird.height + bird.y > canvas.height ||
-                    bird.y + bird.height < 0){
+                if (bird.height + bird.y > canvas.height){
                         console.log('colition top detected');
                         gameOver = true;
                         if (gameOver) {
                             location.reload();
                         };
-                }; 
+                };
+                if (bird.y + bird.height < 0) {
+                    gameOver = true;
+                        if (gameOver) {
+                            location.reload();
+                        };
+                }    
             };
             collitionsBird();
 
